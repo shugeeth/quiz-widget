@@ -1,0 +1,171 @@
+[
+  {
+    "imageUrl": "https://i.ibb.co/7v9JXYX/al-Khwarizmi-treatise.jpg",
+    "text": {
+      "header": "Did you know?",
+      "content": "This 9th century Mathematics treatise about completion and balancing helped in coining the name of one of the beautiful concepts in Mathematics."
+    },
+    "options": ""
+  },
+  {
+    "imageUrl": "https://i.ibb.co/7v9JXYX/al-Khwarizmi-treatise.jpg",
+    "text": {
+      "header": "Arabic Book of 820 AD",
+      "content": "The title of this book is 'Kitāb al-muḫtaṣar fī ḥisāb al-ğabr wa-l-muqābala'. Who is the author of this book?"
+    },
+    "options": {
+      "score": 3,
+      "choices": [
+        "Al-Muhtazar",
+        "Diophantus",
+        "Al-Khwarizmi",
+        "Ibn al-Nadim"
+      ],
+      "correct": {
+        "index": 2,
+        "percent": 47,
+        "content": "Al-Khwarizmi. The title roughly translates to 'The Compendious Book on Calculation by Completion and Balancing'."
+      }
+    }
+  },
+  {
+    "imageUrl": "https://i.ibb.co/g6f5pWF/al-Khwarizmi.jpg",
+    "text": {
+      "header": "Al-Khwarizmi",
+      "content": "He was a Persian polymath who produced vastly influential works in Mathematics, Astronomy, and Geography. Around 820 CE he was appointed as the astronomer and head of the library of the House of Wisdom in Baghdad."
+    },
+    "options": ""
+  },
+  {
+    "imageUrl": "",
+    "text": {
+      "header": "Al-Khwarizmi - Math Works",
+      "content": "In the 12th century, Latin translations of his textbook on arithmetic codified the various indian numerals and introduced the decimal positional number system to the western world. The Compendious Book on Calculation by Completion and Balancing, translated into Latin by Robert of Chester in 1145, was used until the sixteenth century as the principal mathematical text-book of European universities."
+    },
+    "options": ""
+  },
+  {
+    "imageUrl": "",
+    "text": {
+      "header": "Al-Khwarizmi - Other Works",
+      "content": "In addition to his best-known works, he revised Ptolemy's Geography, listing the longitudes and latitudes of various cities and localities. He further produced a set of astronomical tables and wrote about calendaric works, as well as the astrolabe and the sundial. He also made important contributions to trigonometry, producing accurate sine and cosine tables, and the first table of tangents."
+    },
+    "options": ""
+  },
+  {
+    "imageUrl": "https://i.ibb.co/wRy3n01/al-Khwarizmi-statue.png",
+    "text": {
+      "header": "The Math Concept",
+      "content": "Which important Math concept was named after Al-Khwarizmi's book?"
+    },
+    "options": {
+      "score": 2,
+      "choices": [
+        "Calculus",
+        "Trigonometry",
+        "Logarithm",
+        "Algebra"
+      ],
+      "correct": {
+        "index": 3,
+        "percent": 23,
+        "content": "Algebra. The term algebra itself comes from the title of Al-Khwarizmi's book (the word al-jabr meaning \"completion\" or \"rejoining\")."
+      }
+    }
+  },
+  {
+    "imageUrl": "https://i.ibb.co/9pR9VwV/Maths.jpg",
+    "text": {
+      "header": "Algebra",
+      "content": "What does the Math concept Algebra deal with?"
+    },
+    "options": {
+      "score": 2,
+      "choices": [
+        "Slope of a line",
+        "Hypotenuse",
+        "Math with unknowns",
+        "Bazoongas :)"
+      ],
+      "correct": {
+        "index": 2,
+        "percent": 77,
+        "content": "Algebra in Math, deals with the unknown values. It introduced alphabets into Math before which only numbers were considered."
+      }
+    }
+  },
+  {
+    "imageUrl": "https://i.ibb.co/Sy5tDHP/Algebra.jpg",
+    "text": {
+      "header": "Algebra",
+      "content": "Algebra is one of the broad parts of mathematics, together with number theory, geometry and analysis. It is a branch of mathematics dealing with symbols and the rules for manipulating those symbols. In elementary algebra, those symbols (today written as Latin and Greek letters) represent quantities without fixed values, known as variables."
+    },
+    "options": ""
+  },
+  {
+    "imageUrl": "https://i.ibb.co/YTCVSTj/Algebra-X.jpg",
+    "text": {
+      "header": "The Mystery X",
+      "content": "The alphabet 'x' is the most often used in algebra, beacuase it was borrowed from a Greek alphabet. Which one was it?"
+    },
+    "options": {
+      "score": 2,
+      "choices": [
+        "Kai",
+        "Psi",
+        "Kappa",
+        "Omikron"
+      ],
+      "correct": {
+        "index": 0,
+        "percent": 12,
+        "content": "The 'x' in algebra has its origin with ancient Greek alphabet Kai. It was the most occuring alphabet in the ancient times."
+      }
+    }
+  },
+  {
+    "imageUrl": "https://i.ibb.co/ggDCjnP/Greek-Kai.png",
+    "text": {
+      "header": "The Mystery X",
+      "content": "The problem for the Medieval Spanish scholars who were tasked with translating arabic material is that the letter 'sheen' and the word 'shayun' in arabic can't be rendered into Spanish because Spanish doesn't have that 'sh' sound. So by convention, they created a rule in which they borrowed the 'ck' sound, from the classical Greek in the form of the letter Kai."
+    },
+    "options": ""
+  },
+  {
+    "imageUrl": "https://i.ibb.co/zh9f6Tp/Greek-Latin.jpg",
+    "text": {
+      "header": "The Mystery X",
+      "content": "Later when this material was translated into a common European language, which is to say Latin, they simply replaced the Greek Kai with the Latin X. And once that happened, once this material was in Latin, it formed the basis for mathematics textbooks for almost 600 years."
+    },
+    "options": ""
+  },
+  {
+    "imageUrl": "https://i.ibb.co/Q6kv4gS/Algebra-Types.png",
+    "text": {
+      "header": "Algebric Equations",
+      "content": "One primary task in algebra is to solve equations how many types of equations are there in algebra?"
+    },
+    "options": {
+      "score": 1,
+      "choices": [
+        "3",
+        "7",
+        "9",
+        "5"
+      ],
+      "correct": {
+        "index": 3,
+        "percent": 89,
+        "content": "5. They are Polynomial, Exponential, Logarithmic, Rational and Trignomentric equations."
+      }
+    }
+  },
+  {
+    "imageUrl": "",
+    "text": {
+      "header": "Algebric Equations",
+      "content": "There are five main types of algebraic equations, distinguished by the position of variables, the types of operators and functions used, and the behavior of their graphs. Each type of equation has a different expected input and produces an output with a different interpretation. The differences and similarities between the five types of algebraic equations and their uses demonstrate the variety and power of algebraic operations."
+    },
+    "options": ""
+  }
+]
