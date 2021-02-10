@@ -1,6 +1,15 @@
 /* To style linear progress bar */
 .linear-progress-bar{
     padding-top: 35px;
+    -webkit-animation: progress-scroll 0.5s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-delay: 0.4s;
+    animation: progress-scroll 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.4s;
+    opacity:0%;
 }
 .linear-progress-bar>.progress {
     height: 10px;
@@ -12,10 +21,8 @@
 }
 
 .linear-progress-bar>.progress .progress-bar {
-    background-color: #8578c5;
+    background-color: #93412A;
     position: relative;
-    -webkit-animation: animate-positive 2s;
-    animation: animate-positive 2s;
     overflow: visible;
 }
 
@@ -40,4 +47,51 @@
     right: -5px;
     z-index: 1;
     transform: rotate(35deg)
+}
+
+@keyframes progress-scroll {
+    0% {
+        -webkit-transform: translate(2px, 2px) rotate(20deg);
+        opacity: 0%;
+    }
+    10% {
+        -webkit-transform: translate(-4px, -4px) rotate(-20deg);
+    }
+    20% {
+        -webkit-transform: translate(2px, 2px) rotate(20deg);
+    }
+    30% {
+        -webkit-transform: translate(-2px, 2px) rotate(-20deg);
+    }
+    40% {
+        -webkit-transform: translate(4px, -4px) rotate(20deg);
+    }
+    50% {
+        -webkit-transform: translate(-4px, -4px) rotate(-20deg);
+    }
+    60% {
+        -webkit-transform: translate(2px, 2px) rotate(20deg);
+    }
+    70% {
+        -webkit-transform: translate(-2px, 2px) rotate(-20deg);
+    }
+    80% {
+        -webkit-transform: translate(4px, -4px) rotate(20deg);
+    }
+    85% {
+        -webkit-transform: translate(-4px, -4px) rotate(-20deg);
+    }
+    90% {
+        -webkit-transform: translate(2px, 2px) rotate(20deg);
+    }
+    93% {
+        -webkit-transform: translate(-2px, 2px) rotate(-20deg);
+    }
+    96% {
+        -webkit-transform: translate(4px, -4px) rotate(20deg);
+    }
+    100% {
+        opacity:100%;
+        -webkit-transform: translate(-2px, 2px) rotate(0deg);
+    }
 }

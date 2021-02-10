@@ -1,4 +1,4 @@
-angular.module("planetApp").service("AppServices", [
+angular.module("quizApp").service("AppServices", [
   "$rootScope",
   "$http",
   "$q",

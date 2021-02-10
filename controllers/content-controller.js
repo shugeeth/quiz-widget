@@ -1,19 +1,18 @@
 (function(){
     "use strict";
-    angular.module('planetApp').controller("contentController",['$scope','AppServices',
-    function($scope,appServices){
+    angular.module('quizApp').controller("contentController",['$scope','$location','AppServices',
+    function($scope, $location, appServices){
         $scope.currentSlide = "";
         $scope.index = 0;
         $scope.progressPercent = 0;
         $scope.resultFlag = false; //whether answered
         $scope.score = 0;
-        $scope.totalScore = 0;
+        var totalScore = 0;
         $scope.quizResponse = "";
         $scope.responseSuccess = false; //whether answer is right or wrong
 
         $scope.accessQuiz = function(optionIndex){
             $scope.resultFlag = true;
-            $scope.totalScore += $scope.currentSlide.options.score;
             if(optionIndex==$scope.currentSlide.options.correct.index){
                 $scope.score += $scope.currentSlide.options.score;
                 $scope.quizResponse = "Yay!!! You got it right.";
@@ -25,20 +24,34 @@
             }
         };
 
+        //Code for Result Jump
+        $scope.upNext = function(){
+            $location.path('/result/score/'+$scope.score+'/total/'+totalScore);
+        };
+
         $scope.next = function(){
             if($scope.index < $scope.data.length-1){
                 $scope.index++;
-                $scope.progressPercent = Math.ceil(100 * $scope.index / $scope.data.length);
+                $scope.progressPercent = Math.ceil(100 * (1 + $scope.index) / $scope.data.length);
+                $scope.currentSlide = $scope.data[$scope.index];
+                if($scope.currentSlide.options)
+                    totalScore += $scope.currentSlide.options.score;
+                $scope.resultFlag = false;
             }
             else{
-                $scope.index = 0;
-                $scope.progressPercent = 0;
-                $scope.score = 0;
-                $scope.totalScore = 0;
+
+                // Controller Initialization
+                // $scope.index = 0;
+                // $scope.progressPercent = 0;
+                // $scope.score = 0;
+                // totalScore = 0;
+                // $scope.currentSlide = $scope.data[$scope.index];
+                // $scope.resultFlag = false;
+
+                //Redirect to result page
+                $location.path('/result/score/'+$scope.score+'/total/'+totalScore);
             }
-            $scope.currentSlide = $scope.data[$scope.index];
-            $scope.resultFlag = false;
-            $scope.userAnswer = "";
+            
         };
 
         //Using $q as a promise

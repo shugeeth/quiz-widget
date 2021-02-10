@@ -3,38 +3,185 @@ body
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
+  /* margin: 10px 25px; */
+  /* zoom: 0.75;
+  transform: scale(0.75);
+  transform-origin: 0 0; */
+  /* -ms-zoom: 0.75;
+  -moz-transform: scale(0.75);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.75);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.75);
+  -webkit-transform-origin: 0 0; */
 }
 
-/* Predefined */
+.top-progress{
+  background-color: #4971D3;
+}
 
-.planet-container {
+/* Quiz Container and View */
+
+.quiz-container {
   position: relative;
   margin: 10px 10px;
 }
 
-/* .planet-view {
-  padding: 10px;
-} */
-
-.planet-view.ng-animate {
+.quiz-view.ng-animate {
   transition: all ease 0.4s;
   position: absolute;
 }
 
-.planet-view.ng-enter {
+.quiz-view.ng-enter {
   left: 200px;
   opacity: 0;
 }
 
-.planet-view.ng-leave,
-.planet-view.ng-enter.ng-enter-active {
+.quiz-view.ng-leave,
+.quiz-view.ng-enter.ng-enter-active {
   left: 0;
   opacity: 1;
 }
 
-.planet-view.ng-leave.ng-leave-active {
+.quiz-view.ng-leave.ng-leave-active {
   left: -200px;
   opacity: 0;
+}
+
+/* ------------------- Animation for Cards -----------------*/
+
+.slide.ng-animate {
+  transition: all ease 0.4s;
+  position: absolute;
+}
+
+.slide.ng-enter {
+  left: 200px;
+  opacity: 0;
+}
+
+.slide.ng-leave,
+.slide.ng-enter.ng-enter-active {
+  left: 0;
+  opacity: 1;
+}
+
+.slide.ng-leave.ng-leave-active {
+  left: -200px;
+  opacity: 0;
+}
+
+/* -------- Score Pill Animation --------- */
+.score-box {
+  -webkit-animation-name: shake;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 1s;
+  animation-name: shake;
+  transform-origin: 50% 50%;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+}
+
+/* -------- Quiz Response Animation --------- */
+
+.response{
+  -webkit-animation-name: fadein;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 1s;
+  animation-name: fadein;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+}
+
+/* -------- Quiz Response Animation --------- */
+
+.result-text{
+  -webkit-animation-name: leftin;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 1s;
+  animation-name: leftin;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+}
+
+/* -------- Result Progress Animation --------- */
+
+.result-progress {
+  animation: slingin 1s 2;
+}
+
+/* ------------------ Keyframes -------------------- */
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(2px, 2px) rotate(20deg);
+  }
+  15% {
+    -webkit-transform: translate(-4px, -4px) rotate(-20deg);
+  }
+  30% {
+    -webkit-transform: translate(2px, 2px) rotate(20deg);
+  }
+  45% {
+    -webkit-transform: translate(-2px, 2px) rotate(-20deg);
+  }
+  60% {
+    -webkit-transform: translate(4px, -4px) rotate(20deg);
+  }
+  75% {
+    -webkit-transform: translate(-2px, -2px) rotate(-20deg);
+  }
+  90% {
+    -webkit-transform: translate(2px, 2px) rotate(20deg);
+  }
+  100% {
+    -webkit-transform: translate(-4px, -4px) rotate(-20deg);
+  }
+}
+
+@keyframes fadein {
+  0% {
+      /* background-color: #A8A6C2; */
+      transform: translate(0,100%);
+      opacity: 0%;
+  }
+  100% {
+      /* background-color: #A8A6C2; */
+      transform: translate(0%,0%);
+      opacity:100%;
+  }
+}
+
+@keyframes leftin {
+  0% {
+      /* background-color: #A8A6C2; */
+      transform: translate(-40%,0%);
+      opacity: 0%;
+  }
+  100% {
+      /* background-color: #A8A6C2; */
+      transform: translate(0%,0%);
+      opacity:100%;
+  }
+}
+
+@keyframes slingin {
+  0% {
+      transform: scale(1,1);
+  }
+  50% {
+      transform: scale(1.2,1.2);
+  }
+  100% {
+      transform: scale(1,1);
+  }
 }
 
 /* -------------------- Begin Scroll Bar ------------------ */
@@ -62,3 +209,4 @@ body
 }
 
 /* -------------------- End Scroll Bar ------------------ */
+

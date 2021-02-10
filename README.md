@@ -1,1 +1,1 @@
-# quiz-widget
+# Quiz Widget

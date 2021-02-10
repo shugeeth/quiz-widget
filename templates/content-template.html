@@ -1,94 +1,109 @@
-<div class="progress mb-2" style="height:0.75rem;">
-    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" ng-style="{'width':progressPercent+'%'}"></div>
-</div>
-<div class="card">
-    <img ng-if="currentSlide.imageUrl" ng-src="{{currentSlide.imageUrl}}" class="card-img-top" />
-    <!-- Card Body -->
-    <div class="card-body">
-
-        <!-- Card Header and Score Pill -->
-        <div class="row justify-content-between">
-            <!-- Card Header -->
-            <div ng-class="{ 'col-6': currentSlide.options, 'col-12': !currentSlide.options }" ng-if="currentSlide.text.header">
-                <h5 class="card-title">{{currentSlide.text.header}}</h5>
-            </div>
-            <!-- Score Pill -->
-            <div class="col-6 mb-2" ng-if="currentSlide.options">
-                <div class="btn btn-danger float-right">
-                    Score <span class="badge badge-light">{{ score }}</span>
+<div class="slide">
+    <div class="progress mb-2" style="height:0.75rem;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated top-progress" role="progressbar" ng-style="{'width':progressPercent+'%'}"></div>
+    </div>
+    <div class="card border-dark">
+        <img ng-if="currentSlide.imageUrl" ng-src="{{currentSlide.imageUrl}}" class="card-img-top" />
+        <!-- Card Body -->
+        <div class="card-body">
+    
+            <!-- Card Header and Score Pill -->
+            <div class="row justify-content-between">
+                <!-- Card Header -->
+                <div ng-class="{ 'col-6': currentSlide.options, 'col-12': !currentSlide.options }" ng-if="currentSlide.text.header">
+                    <h5 class="card-title">{{currentSlide.text.header}}</h5>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Card Text -->
-        <div class="card-text">
-            <!-- Card Content/Question -->
-            <div class="row" ng-if="currentSlide.text.content && !resultFlag">
-                <div class="col-12">
-                    <p>{{currentSlide.text.content}}</p>
+                <!-- Score Pill -->
+                <div class="col-6 mb-2" ng-if="currentSlide.options">
+                    <div class="btn btn-danger float-right">
+                        Score <span class="badge badge-light score-box">{{ score }}</span>
+                    </div>
                 </div>
             </div>
             
-            
-            <!-- Card Question Options -->
-            <div class="row" ng-if="currentSlide.options && !resultFlag" ng-repeat="choice in currentSlide.options.choices">
-                <div class="col-sm-12">
-                    <button  class="btn btn-warning col-sm-12 mb-2" ng-click="accessQuiz($index)">
-                        {{ choice }}
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Card Options Result -->
-            <div class="alert alert-info mb-2" ng-if="currentSlide.options && resultFlag">
-                
-                <!-- Quiz Response -->
-                <div class="row">
+            <!-- Card Text -->
+            <div class="card-text">
+                <!-- Card Content/Question -->
+                <div class="row" ng-if="currentSlide.text.content && !resultFlag">
                     <div class="col-12">
-                        <div class="alert-link">
-                            <span style="font-size: 1.6rem;" ng-if="!responseSuccess">
-                                <i class="fas fa-times text-danger" data-fa-transform="grow-2 down-2"></i>
-                            </span>
-                            <span style="font-size: 1.6rem;" ng-if="responseSuccess">
-                                <i class="fas fa-check text-success" data-fa-transform="grow-2 down-2"></i>
-                            </span>
-                            &nbsp;{{ quizResponse }}&nbsp;
-                            <span style="font-size: 1.6rem;" ng-if="!responseSuccess">
-                                <i class="fas fa-grin-squint text-danger" data-fa-transform="grow-2 down-2"></i>
-                            </span>
-                            <span style="font-size: 1.6rem;" ng-if="responseSuccess">
-                                <i class="fas fa-grin-hearts text-success" data-fa-transform="grow-2 down-2"></i>
-                            </span>
+                        <p>{{currentSlide.text.content}}</p>
+                    </div>
+                </div>
+                
+                
+                <!-- Card Question Options -->
+                <div class="row" ng-if="currentSlide.options && !resultFlag" ng-repeat="choice in currentSlide.options.choices">
+                    <div class="col-sm-12">
+                        <button  class="btn btn-warning col-sm-12 mb-2" ng-click="accessQuiz($index)">
+                            {{ choice }}
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Card Options Result -->
+                <div class="alert alert-info mb-2" ng-if="currentSlide.options && resultFlag">
+                    
+                    <!-- Quiz Response -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert-link">
+                                <span style="font-size: 1.6rem;" ng-if="!responseSuccess">
+                                    <i class="fas fa-times text-danger" data-fa-transform="grow-2 down-2"></i>
+                                </span>
+                                <span style="font-size: 1.6rem;" ng-if="responseSuccess">
+                                    <i class="fas fa-check text-success" data-fa-transform="grow-2 down-2"></i>
+                                </span>
+                                &nbsp;{{ quizResponse }}&nbsp;
+                                <span style="font-size: 1.6rem;" ng-if="!responseSuccess">
+                                    <i class="fas fa-grin-squint text-danger" data-fa-transform="grow-2 down-2"></i>
+                                </span>
+                                <span style="font-size: 1.6rem;" ng-if="responseSuccess">
+                                    <i class="fas fa-grin-hearts text-success" data-fa-transform="grow-2 down-2"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Quiz Response Content -->
-                <div class="row mt-2 align-items-center justify-content-center">
-                    <div class="col-12">
-                        {{ currentSlide.options.correct.content }}
-                    </div>
-                    <div class="col-12 linear-progress-bar mt-2">
-                        <div class="progress">
-                            <div class="progress-bar" ng-style="{ 'width':currentSlide.options.correct.percent + '%'}" >
-                                <div class="progress-value font-italic">
-                                    {{currentSlide.options.correct.percent}}% of them got it right
+    
+                    <!-- Quiz Response Content -->
+                    <div class="row mt-2 align-items-center justify-content-center">
+                        <div class="col-12 response">
+                            {{ currentSlide.options.correct.content }}
+                        </div>
+                        <div class="col-12 linear-progress-bar mt-2">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" ng-style="{ 'width':currentSlide.options.correct.percent + '%'}" >
+                                    <div class="progress-value font-italic">
+                                        {{currentSlide.options.correct.percent}}% of them got it right
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+    
                 </div>
-
+                
             </div>
             
+            <!-- Navigation Buttons -->
+            <div class="row justify-content-between mt-2">
+                <!-- Next Button -->
+                <div class="col-5">
+                    <button ng-click="next()" class="btn btn-primary col-12" style="height:2.5rem;">
+                        Next &nbsp;<span style="color:white;">
+                            <i class="fas fa-angle-double-right"></i>
+                        </span>
+                    </button>
+                </div>
+                <!-- Up Next Button -->
+                <div class="col-5">
+                    <button ng-click="upNext()" class="btn btn-primary col-12 float-right" style="height:2.5rem;">
+                        Skip &nbsp;<span style="color:white;">
+                            <i class="fas fa-fast-forward"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+    
         </div>
-        
-        <!-- Card Button -->
-        <button ng-click="next()" class="btn btn-primary col-5 mt-2" style="height:2.5rem;">
-            <span style="color:white;font-size: 1.6rem;">
-                <i class="fas fa-angle-double-right" data-fa-transform="grow-3 up-5"></i>
-            </span>
-        </button>
-
     </div>
 </div>

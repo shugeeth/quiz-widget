@@ -1,15 +1,57 @@
-<div class="card">
-    <img src="" class="card-img-top" alt="">
-    <div class="card-body">
-        <h5 class="card-title align-items-center">{{planet.name}}</h5>
-        <p class="card-text">
-        <p>DataFromCtrl = {{data}}</p>
-        <p>DataFromService = {{IsFeatureEnabled}}</p>
-        <p>Carbon Dioxide: {{planet.carbondioxide}}</p>
-        <p>Nitrogen: {{planet.nitrogen}}</p>
-        <p>Oxygen: {{planet.oxygen}}</p>
-        <p>Hydrogen: {{planet.hydrogen}}</p>
+<div class="card border-dark text-center">
+    <div class="card-body bg-warning justify-content-center" style="padding:50px 20px 20px 20px;">
+        <h5 class="card-title result-text">
+            <span style="color:white;">
+                <i class="fas text-dark" data-fa-transform="grow-1 up-3"
+                ng-class="{ 'fa-mug-hot': responseFlag==1, 
+                            'fa-thumbs-up': responseFlag==2, 
+                            'fa-medal': responseFlag==3, 
+                            'fa-trophy': responseFlag==4 }">
+
+                </i>
+            </span> &nbsp;{{result}}
+        </h5>
+
+        <div class="pie mx-auto my-5 result-progress" ng-if="percent"
+          data-pie='{ "percent": {{percent}}, 
+                    "colorSlice": "#000000", 
+                    "colorCircle": "#f1f1f1", 
+                    "fontWeight": 100,
+                    "fontColor": "#000000"
+                 }'>
+        </div>
+
+        <div class="mx-auto my-5 result-progress" ng-if="!percent" style="padding: 30px 0px;">
+            <span class="fa-stack fa-2x">
+                <i class="fas fa-kiwi-bird fa-5x fa-stack-2x" data-fa-transform="left-5"></i>
+                <i class="fas fa-egg fa-inverse fa-stack-1x" data-fa-transform="grow-1 left-13 up-4"></i>
+                <!-- <i class="fas fa-percentage fa-inverse fa-stack-1x"></i> -->
+            </span>
+        </div>
+        
+        <p class="card-text alert alert-warning response">
+            You got {{data.score}} out of {{data.total}}. {{smallText}} <span class="alert-link">You win a scratch card.</span> Register/Login to claim your prize.
         </p>
-        <a href="#" class="btn btn-primary">Next</a>
+    </div>
+    <div class="card-footer border-dark">
+        <!-- Navigation Buttons -->
+        <div class="row justify-content-between">
+            <!-- Replay Button -->
+            <div class="col-6">
+                <a href="/content" class="btn btn-primary col-12 float-left." style="height:2.5rem;">
+                    <span style="color:white;">
+                        <i class="fas fa-redo-alt"></i>
+                    </span> &nbsp;Replay
+                </a>
+            </div>
+            <!-- Navigate Outside -->
+            <div class="col-6">
+                <a href="https://www.qshala.com/" target="_blank" class="btn btn-primary col-12 float-right" style="height:2.5rem;">
+                    <span style="color:white;">
+                        <i class="fab fa-wpexplorer fa-lg"></i>
+                    </span> &nbsp;Explore
+                </a>
+            </div>
+        </div>
     </div>
 </div>
